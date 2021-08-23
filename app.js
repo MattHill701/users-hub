@@ -33,11 +33,10 @@ function renderUser(user) {
 }
 
 function renderUserList(userList) {
-  const userListElement = $('#user-list');
-  userListElement.empty();
+  $('#user-list').empty();
   
   userList.forEach(function (user) {
-    userListElement.append( renderUser(user) );
+    $('#user-list').append( renderUser(user) );
   });
 }
 
@@ -129,7 +128,7 @@ function setCommentsOnPost(post) {
   .then(function (comments) {
     // #2: Something goes here
     post.comments = comments;
-    
+
     return post;
   });
 }
